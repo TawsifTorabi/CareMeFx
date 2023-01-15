@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CareMe.HelloController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="341.0" fitWidth="331.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/side_bar.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Personal Healthcare Companion" textAlignment="CENTER" wrappingWidth="238.0">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="-6.0" right="-1.0" top="-68.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="48.0" prefWidth="237.0" style="-fx-background-color: WHITE;">
+               <VBox.margin>
+                  <Insets top="11.0" />
+               </VBox.margin>
+            </HBox>
+            <Text fill="#bcbcbc" strokeType="OUTSIDE" strokeWidth="0.0" text="© Team Legion" textAlignment="CENTER" wrappingWidth="236.978515625" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="388.0" prefWidth="441.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="156.0" prefWidth="441.0">
+               <children>
+                  <Label prefHeight="110.0" prefWidth="264.0" text="Sign Up with A New Account" textFill="#dd2323">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="18.0" top="52.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="441.0">
+               <children>
+                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="140.291015625" />
+                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="98.291015625" />
+               </children>
+            </HBox>
+            <HBox prefHeight="15.0" prefWidth="704.0">
+               <children>
+                   <TextField fx:id="firstName" onAction="#validate" prefHeight="30.0" prefWidth="124.0" promptText="First">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                   <TextField fx:id="lastName" prefHeight="31.0" prefWidth="144.0" promptText="Last" />
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="704.0">
+               <children>
+                   <TextField fx:id="emailAddress" onKeyReleased="#CheckEmail" prefHeight="25.0" prefWidth="220.0" promptText="Email Address" />
+                  <Text fx:id="emailMsg" fill="#e41616" onKeyReleased="#CheckEmail" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="7.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="13.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="5.0" prefWidth="704.0">
+               <children>
+                  <TextField fx:id="usernameInputNew" prefHeight="25.0" prefWidth="218.0" promptText="Username" />
+                  <Text fx:id="UsernameMsg" fill="#e41616" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="8.0" top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="14.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="704.0">
+               <padding>
+                  <Insets top="6.0" />
+               </padding>
+               <children>
+                   <PasswordField fx:id="passwordInput" onKeyReleased="#checkPassword" prefHeight="25.0" prefWidth="130.0" promptText="Password">
+                     <HBox.margin>
+                        <Insets right="14.0" />
+                     </HBox.margin>
+                  </PasswordField>
+                   <PasswordField fx:id="passwordInput2" onKeyReleased="#checkPassword" prefHeight="25.0" prefWidth="130.0" promptText="Retype Password" />
+                  <Text fx:id="PassMsg" fill="#e41616" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="153.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="9.0" top="3.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="441.0">
+               <children>
+                  <ComboBox fx:id="bloogGroupSelector" prefHeight="25.0" prefWidth="130.0" promptText="Blood Group">
+                      <items>
+                          <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="A+" />
+                              <String fx:value="A-" />
+                              <String fx:value="B+" />
+                              <String fx:value="B-" />
+                              <String fx:value="AB+" />
+                              <String fx:value="AB-" />
+                              <String fx:value="O+" />
+                              <String fx:value="O-" />
+                          </FXCollections>
+                      </items>
+                  </ComboBox>
+                  <ComboBox fx:id="genderSelector" prefHeight="25.0" prefWidth="130.0" promptText="Gender">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Male" />
+                           <String fx:value="Female" />
+                        </FXCollections>
+                     </items>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="37.0" prefWidth="441.0">
+               <children>
+                  <Text fx:id="processingText" fill="#f21b1b" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="154.6666717529297">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="3.0" top="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="SignUpbtn" mnemonicParsing="false" onAction="#validate" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: Crimson;" text="Sign Up" textFill="WHITE">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="7.0" />
+                           </HBox.margin>
+                        </Button>
+                      <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="21.0" prefWidth="142.0" style="-fx-background-color: crimson;" text="Already Have an Account?" textFill="WHITE">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox prefHeight="388.0" prefWidth="70.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox prefHeight="47.0" prefWidth="748.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="FriendsMainStageScreen" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="774.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CareMe.HomeFriendsController">
+   <left>
+      <TabPane fx:id="FriendsTabPane" prefHeight="618.0" prefWidth="342.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="FriendsTab" text="Friends">
+               <content>
+                  <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="646.0" prefWidth="362.0" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: grey;">
+                     <children>
+                        <Text lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Friends" wrappingWidth="108.80334281921387">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TableView fx:id="FriendListTable" prefHeight="557.0" prefWidth="319.0">
+                          <columns>
+                            <TableColumn fx:id="FriendListView" minWidth="100.0" prefWidth="318.0" text="List" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="264.0">
+                           <children>
+                              <Button fx:id="SentRequestButton" mnemonicParsing="false" onAction="#SeeSentRequests" text="Sent Requests">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="SeeFriendsWindowButton" mnemonicParsing="false" onAction="#SeeFriendsWindow" text="Friends">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="FriendRequestButton" mnemonicParsing="false" onAction="#SeeFriendRequests" text="Friend Requests (+25)">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fx:id="FriendRequestNotification" strokeType="OUTSIDE" strokeWidth="0.0" text="You got 25 New Requests!" textAlignment="CENTER" wrappingWidth="164.6666717529297">
+                           <VBox.margin>
+                              <Insets bottom="1.0" top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="84.0" prefWidth="264.0">
+                           <children>
+                              <TextField fx:id="AddFriendsInput" promptText="Type Username">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button fx:id="AddFriendsButton" mnemonicParsing="false" onAction="#SendFriendRequest" text="Add Friend" />
+                           </children>
+                        </HBox>
+                        <Text fx:id="FriendsRequestSentText" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Add Friend to Send Request" wrappingWidth="230.478515625">
+                           <VBox.margin>
+                              <Insets bottom="18.0" top="3.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab fx:id="ManageFriendsTab" text="Manage Friends">
+               <content>
+                  <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="646.0" prefWidth="362.0" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: grey;">
+                     <children>
+                        <Text lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friend List" wrappingWidth="93.80334281921387">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TableView fx:id="FriendListTable2" prefHeight="557.0" prefWidth="319.0">
+                           <columns>
+                              <TableColumn fx:id="FriendListView2" minWidth="100.0" prefWidth="318.0" text="List" />
+                           </columns>
+                        </TableView>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text fx:id="FriendName" strokeType="OUTSIDE" strokeWidth="0.0" text="Tawsif Torabi">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="FriendSinceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Friend Since 23 December, 2022" />
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="323.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#UnfriendSelected" text="Unfriend ">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#ViewProfileSelected" text="View Profile">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Text fx:id="unfriendNotification" strokeType="OUTSIDE" strokeWidth="0.0" text="Unfriended!" wrappingWidth="62.75390625">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="323.0" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab fx:id="FriendRequestsTab" text="Requests">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="RequestTabPane" layoutX="-2.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="753.0" prefWidth="348.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="ReceivedRequestsTab" text="Recieved Requests">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="348.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="646.0" prefWidth="362.0" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: grey;">
+                                             <children>
+                                                <Text lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friend Requests" wrappingWidth="157.80334281921387">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="17.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <TableView fx:id="FriendRequestTable" prefHeight="607.0" prefWidth="306.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="FriendRequestNameCol" minWidth="100.0" prefWidth="203.0" text="List" />
+                                                      <TableColumn fx:id="FriendRequestActionCol" prefWidth="140.0" text="Action" />
+                                                   </columns>
+                                                </TableView>
+                                                <HBox alignment="CENTER" prefHeight="34.0" prefWidth="323.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="SentRequestsTab" text="Sent Requests">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="747.0" prefWidth="348.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </left>
+</BorderPane>

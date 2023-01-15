@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="MainStageScreen" prefHeight="774.0" prefWidth="1354.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CareMe.HomeController">
+   <right>
+      <VBox prefHeight="774.0" prefWidth="224.0" style="-fx-border-color: grey; -fx-border-width: 2px;" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome!">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="-1.0" left="12.0" right="15.0" top="14.0" />
+               </VBox.margin>
+            </Text>
+            <Text fx:id="usernameTop" layoutX="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <VBox.margin>
+                  <Insets bottom="12.0" left="11.0" top="4.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font></Text>
+            <ButtonBar buttonMinWidth="63.0" prefHeight="22.0" prefWidth="202.0">
+              <buttons>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="16.0" prefWidth="56.0" text="My Profile">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <rotationAxis>
+                        <Point3D x="1.0" z="1.0" />
+                     </rotationAxis>
+                  </Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="16.0" prefWidth="56.0" text="Settings">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="16.0" prefWidth="56.0" style="-fx-background-color: crimson;" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+              </buttons>
+               <VBox.margin>
+                  <Insets bottom="8.0" right="20.0" top="-1.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="-1.0" />
+               </padding>
+            </ButtonBar>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="bmiCalcBtn" mnemonicParsing="false" onAction="#SwitchToBMI" prefHeight="25.0" prefWidth="240.0" text="BMI Calculation" />
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Donation" wrappingWidth="110.29638671875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="11.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="19.0" prefWidth="249.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Group: " textAlignment="CENTER" />
+                  <Text fx:id="bloodGroup" strokeType="OUTSIDE" strokeWidth="0.0" text="B+" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="16.0" />
+               </padding>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Keep A Record of you Donation.">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="17.0" top="1.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="22.0" prefWidth="249.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Donated:" textAlignment="CENTER" wrappingWidth="110.55078125">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="LastDonationDate" strokeType="OUTSIDE" strokeWidth="0.0" text="No Records Found" wrappingWidth="102.333984375" />
+               </children>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="249.0">
+               <children>
+                  <Text fx:id="bloodNotificationText" fill="#A71327" strokeType="OUTSIDE" strokeWidth="0.0" text="You are Eligible!" textAlignment="CENTER" wrappingWidth="128.255859375">
+                     <font>
+                        <Font name="Trebuchet MS Bold Italic" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="4.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Button fx:id="DonateBtn" mnemonicParsing="false" onAction="#SetBloodRecord" prefHeight="19.0" prefWidth="94.0" style="-fx-background-color: #A71327;" text="Record Donation" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="249.0">
+               <children>
+                  <Button fx:id="BloodDonationHistoryBtn" mnemonicParsing="false" onAction="#BloodDonationHistory" prefHeight="25.0" prefWidth="224.0" text="See Blood Donation History">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <Button fx:id="dietChart" mnemonicParsing="false" onAction="#SwitchToDiet" prefHeight="25.0" prefWidth="224.0" text="Diet Chart">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="bmiCalcBtn11" mnemonicParsing="false" onAction="#SwitchToWorkout" prefHeight="25.0" prefWidth="224.0" text="Workout Routine">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="16.0" />
+         </padding>
+      </VBox>
+   </right>
+   <top>
+      <HBox prefHeight="145.0" prefWidth="1354.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="51.0" prefWidth="620.0" />
+                  <AnchorPane prefHeight="51.0" prefWidth="746.0" />
+                  <AnchorPane prefHeight="145.0" prefWidth="410.0" />
+               </children>
+            </HBox>
+         </children></HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="41.0" prefWidth="1354.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
