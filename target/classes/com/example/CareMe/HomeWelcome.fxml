@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root prefHeight="535.0" prefWidth="694.0" style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="65.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8026315569877625" green="0.15235136449337006" blue="0.15235136449337006" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="65.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CareMe">
+         <font>
+            <Font name="Trebuchet MS" size="47.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8947368264198303" green="0.049707602709531784" blue="0.20462962985038757" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.25462964177131653" blue="0.25462964177131653" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <TextArea accessibleRole="TEXT" centerShape="false" editable="false" layoutX="64.0" layoutY="161.0" prefHeight="347.0" prefWidth="565.0" scaleShape="false" style="-fx-border-color: red; -fx-border-insets: -3px;" text="CareMe is Personal Healthcare Tracker Application built in JavaFX.&#10;&#10;Created by Team Legion for Advanced Object Oriented Programming Course&#10;For CSE Project Show FALL 2022, United International University.&#10;&#10;CareMe ables to - &#10;    1. Track Blood Donation Records (Implemented)&#10;    2. Track Womens Mentrual Period Time (Yet Not Implemented)&#10;    3. Get List Of Available Blood Donors Calculating Donation Tracking of Other Donors.&#10;    4. UIU Medical Center Token Portal (Yet Not Implemented)&#10;    5. Emergency Contact List.&#10;    6. Basic BMI Tracking And Recording to Database&#10;    7. Excercise and Workout Suggestion calculation from Users Data.&#10;    8. Food and Diet Suggestion from calculation from Users Data.&#10;    9. ADHD Test (Yet Not Implemented)&#10;  10. Mental Health Screening Tests.&#10;  11. Self Assessments.&#10;&#10;">
+         <font>
+            <Font name="Trebuchet MS" size="11.0" />
+         </font>
+      </TextArea>
+   </children>
+</fx:root>
