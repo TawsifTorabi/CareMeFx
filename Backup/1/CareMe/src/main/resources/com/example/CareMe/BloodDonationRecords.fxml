@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CareMe.BloodDonationRecordsController">
+   <center>
+      <TableView fx:id="BloodDonationRecordTable" maxWidth="1.7976931348623157E308" onMouseClicked="#DisplaySelected" prefHeight="262.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="BloodRecordIndexCol" prefWidth="85.0" text="Index No." />
+          <TableColumn fx:id="BloodRecordTimeCol" editable="false" prefWidth="179.0" text="Time and Date" />
+            <TableColumn fx:id="BloodRecordNoteCol" prefWidth="335.0" text="Note" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox prefHeight="135.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="RecordDetailsArea" prefHeight="161.0" prefWidth="600.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="110.0" prefWidth="210.0">
+                     <children>
+                        <Text fx:id="IndexText" strokeType="OUTSIDE" strokeWidth="0.0" text="Record Index #23" textAlignment="CENTER" wrappingWidth="143.13671875">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date and Time">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="DateTimeText" strokeType="OUTSIDE" strokeWidth="0.0" text="25 December, 2021" />
+                        <Button mnemonicParsing="false" onAction="#DeleteRecordAction" style="-fx-background-color: red;" text="Delete Record" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="9.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="135.0" prefWidth="379.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Set Note:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextArea fx:id="RecordNote" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="71.0" prefWidth="376.0" promptText="Type in your note about this donation...." wrapText="true" />
+                        <Button mnemonicParsing="false" onAction="#SaveNoteAction" text="Save Note" textFill="#0033ff">
+                           <VBox.margin>
+                              <Insets bottom="9.0" top="11.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Blood Donation Records" textAlignment="CENTER" wrappingWidth="297.982421875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="36.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="600.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All your Records of Blood Donation History is here" />
+                  <Text fx:id="BloodDonationRecordNotification" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="219.88232421875">
+                     <HBox.margin>
+                        <Insets top="9.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
